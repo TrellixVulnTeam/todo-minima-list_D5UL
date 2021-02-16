@@ -8,30 +8,24 @@
   font-size: 1.35rem;
 }
 
-.list_item {
-  list-style: none;
+.task {
   display: flex;
   margin: 1rem auto;
-  width: 60%;
-  background-color: rgb(77, 77, 77);
+  max-width: 300px;
+  align-items: center;
   justify-content: space-between;
 }
 
-.list_content {
-  margin: 1rem;
-  color: #fff;
+.task_text {
+  color: rgb(126, 126, 126);
+  font-size: ;
 }
 
-.list_btn-done, .list_btn-delete {
-  margin: 1rem;
-  height: 2rem;
-}
-
-.done {
+.done .task_button--done{
   opacity: .7;
 }
 
-.done .list_content {
+.done .task_text{
   text-decoration: line-through;
 }
 
