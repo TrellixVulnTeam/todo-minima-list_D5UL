@@ -1,41 +1,52 @@
 class TaskController {
 
-    constructor() {
+	constructor() {
 
-        const $ = document.querySelector.bind(document);
+		const $ = document.querySelector.bind(document);
+		this._inputForm = $('[data-form-input]');
+	
+		this._taskList = new TaskList();
+		this._taskView = new TaskView($('[data-tasks]'));
+		this._taskView.update(this._taskList);
+	}
 
-        this._inputForm = $('[data-form-input]');
-        this._buttonDone = $('[data-button-done]');
-        this._buttonDelete = $('[data-button-delete]');
+	_addTask(event) {
 
-        this._taskList = new TaskList();
-        this._taskView = new TaskView($('[data-tasks]'));
-        this._taskView.update(this._taskList);
-    }
+		event.preventDefault();
+		this._addNewTask();
+		this._updateView();
+		this._cleanForm();
+	}
 
-    _addTask(event) {
+	_deleteTask(event) {
 
-        event.preventDefault();
-        this._addNewTask();
-        this._updateView();
-        this._cleanForm();
-    }
+		const task = event.target
+			.parentNode
+			.parentNode
+			.querySelector('.task_text')
+			.innerHTML
 
-    _addNewTask() {
+		this._taskList._deleteTaskFromList(task);
+		this._updateView();
+		this._cleanForm();
+	}
 
-        const newTask = new Task(this._inputForm.value);
-        return this._taskList._addTaskToList(newTask);
-    }
+	
+	_addNewTask() {
+		
+		const newTask = new Task(this._inputForm.value);
+		return this._taskList._addTaskToList(newTask);
+	}
+		
+	_updateView() {
 
-    _updateView() {
+		return this._taskView.update(this._taskList);
+	}
 
-        return this._taskView.update(this._taskList);
-    }
+	_cleanForm() {
 
-    _cleanForm() {
-
-        this._inputForm.value = '';
-        this._inputForm.focus();
-    }
+		this._inputForm.value = '';
+		this._inputForm.focus();
+	}
 
 }

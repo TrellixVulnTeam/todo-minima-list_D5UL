@@ -18,17 +18,16 @@
 
 .task_text {
   color: rgb(126, 126, 126);
-  font-size: ;
 }
 
 .done .task_button--done{
   opacity: .7;
 }
 
-.done .task_text{
+.done{
   text-decoration: line-through;
 }
 
-.delete {
+.delete > .task {
   display: none;
 }

@@ -15,6 +15,11 @@ class TaskList {
         return [].concat(this._taskList);
     }
 
+    _deleteTaskFromList(task) {
 
-
+        this._taskList = this._taskList
+        .filter( (el) => el._task != task )
+        
+        return this._taskList;
+   }
 }
