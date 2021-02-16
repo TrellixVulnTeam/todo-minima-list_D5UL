@@ -9,12 +9,12 @@
 </head>
 
 <body>
-  <div class="todo-list">
-    <h1 class="title">
+  <div class="todo">
+    <h1 class="todo_title">
       MinimaList
     </h1>
 
-    <form class="form" action="">
+    <form class="form" onsubmit="task._addTask(event)">
       <input class="form-input" type="text" data-form-input>
       <button class="form-button" data-form-button> add </button>
     </form>
@@ -23,10 +23,13 @@
     </ul>
   </div>
 
-  <script type="module" src="./assets/js/models/Task.js"></script>
+  <script src="./assets/js/models/Task.js"></script>
+  <script src="./assets/js/models/TaskList.js"></script>
+  <script src="./assets/js/controllers/TaskController.js"></script>
+
   <script>
 
-
+    let task = new TaskController();
 
   </script>
 </body>
