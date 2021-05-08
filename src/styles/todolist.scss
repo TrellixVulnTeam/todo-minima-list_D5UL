@@ -1,0 +1,25 @@
+.todo-list {
+  max-width: 920px;
+  margin: 0 auto;
+
+    .input-group {
+      display: flex;
+      justify-content: space-around;
+      
+        input {
+          border-top: none;
+          border-right: none;
+          border-left: none;
+          font-size: 1.5rem;
+          padding: 1rem;
+          outline-style: none;
+          box-shadow: none;
+        }
+
+        button {
+          font-size: 1rem;
+          height: 3rem;
+          padding: 1rem;
+        }
+    }      
+}
